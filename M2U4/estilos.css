@@ -1,13 +1,12 @@
 .image-container {
     display: flex; /* Crea un contenedor flexible*/
-    justify-content: center; /* Centra la imagen dentro del contenedor */
-}
+    justify-content: center;
 
 .header {
     background-color: #F9A7B0;
     color: #FFF;
     text-align: center;
-    padding: 10px; /* Agrega un relleno de 10px en todos los lados del encabezado (Se ve mas ancho)*/
+    padding: 10px; /* Agrega un relleno de 10px */
     border-radius: 5px; /* Agrega bordes redondeados al encabezado */
 }
 
@@ -29,7 +28,7 @@ body {
 
 .column {
     flex-basis: 40%; /* Flex-basis: 50%; establece que cada columna ocupa el 50% del ancho disponible dentro del contenedor*/
-    padding: 0 20px; /* Agrega un relleno de 20 píxeles a la izquierda y derecha de cada columna */
+    padding: 0 20px; 
     font-size: 16px;
     line-height: 1.5;  /* Establece la altura de línea de texto en 1.5  */
 }
