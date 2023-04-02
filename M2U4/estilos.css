@@ -1,13 +1,16 @@
 .image-container {
-    display: flex; /* Crea un contenedor flexible*/
-    justify-content: center;
+    text-align: center;
+}
+
+img {
+    display: inline-block;
+}
 
 .header {
     background-color: #F9A7B0;
     color: #FFF;
     text-align: center;
-    padding: 10px; /* Agrega un relleno de 10px */
-    border-radius: 5px; /* Agrega bordes redondeados al encabezado */
+    border: 15px solid transparent;
 }
 
 body {
@@ -22,18 +25,14 @@ body {
 
 .columns-container {
     margin-top: 60px;
-    display: flex; /* Hace que los elementos dentro de .columns-container se muestren como una fila */
-    text-align: justify;
-}
-
-.column {
-    flex-basis: 50%; /* Flex-basis: 50%; establece que cada columna ocupa el 50% del ancho disponible dentro del contenedor*/
-    padding: 0 20px; 
     font-size: 16px;
     line-height: 1.5;  /* Establece la altura de línea de texto en 1.5  */
 }
 
-ul,
+ul {
+    margin-bottom: 10px;
+}
+
 ol {
     margin-bottom: 10px;
 }
