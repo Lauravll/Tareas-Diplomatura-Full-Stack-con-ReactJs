@@ -27,7 +27,7 @@ body {
 }
 
 .column {
-    flex-basis: 40%; /* Flex-basis: 50%; establece que cada columna ocupa el 50% del ancho disponible dentro del contenedor*/
+    flex-basis: 50%; /* Flex-basis: 50%; establece que cada columna ocupa el 50% del ancho disponible dentro del contenedor*/
     padding: 0 20px; 
     font-size: 16px;
     line-height: 1.5;  /* Establece la altura de línea de texto en 1.5  */
