@@ -1,0 +1,74 @@
+.image-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header {
+  background-image: linear-gradient(to bottom, #c56aba, #e3b2de);
+  background-color: #F9A7B0;
+  color: #FFF;
+  text-align: center;
+  border-width: 0; 
+  padding: 15px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+  border-radius: 5px; 
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+
+    margin: 0 150px; /* Agrega un margen de 150 píxeles a la izquierda y derecha del cuerpo */
+}
+
+.nombre {
+    text-align: center;
+}
+
+.columns-container {
+    column-gap: 80px;
+    column-count: 2;
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 1.80; 
+    margin-top: 60px;
+    text-align: justify; 
+    min-height: 500px;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+ol {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+    color: #F9A7B0;
+}
+
+.href {
+    color: #F9A7B0; 
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/static/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+footer {
+    background-image: linear-gradient(to bottom, #c56aba, #e3b2de);
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #FFF;
+    margin: 0 10px;
+}
+
+.redes-sociales a {
+    color: #FFF;
+    margin: 0 10px;
+}

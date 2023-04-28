@@ -1,0 +1,45 @@
+.image-container {
+    text-align: center;
+}
+
+.header {
+  background-image: linear-gradient(to bottom, #F9A7B0, #FFF);
+  background-color: #F9A7B0;
+  color: #FFF;
+  text-align: center;
+  border-width: 0; /* Establece el ancho del borde en 0 */
+  padding: 15px; /* Ajusta el padding en su lugar */
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin: 0 150px; /* Agrega un margen de 150 píxeles a la izquierda y derecha del cuerpo */
+}
+
+.nombre {
+    text-align: center;
+}
+
+.columns-container {
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 1.5;  /* Establece la altura de línea de texto en 1.5  */
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+ol {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+    color: #F9A7B0;
+}
+
+.href {
+    color: #F9A7B0; 
+}
