@@ -1,0 +1,47 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cuadrado {
+    width: 680px;
+    height: 680px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+}
+
+.columna {
+    flex-basis: 33.33%;
+    background-color: white;
+}
+
+.columna.derecha {
+    flex-basis: 33.33%;
+    background-color: blue;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: white;
+}
+
+.items-columna {
+    flex-basis: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.red {
+    background-color: rgb(134, 40, 40);
+}
+
+.green {
+    background-color: rgb(25, 100, 30);
+}
+
+.blue {
+    background-color: rgb(28, 45, 199);
+}

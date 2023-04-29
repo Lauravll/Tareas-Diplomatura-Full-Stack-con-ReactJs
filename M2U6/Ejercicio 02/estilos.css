@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.square {
+    width: 680px;
+    height: 680px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex-basis: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+columns {
+    display: flex;
+}
+
+.column-flex {
+    flex-basis: 33.33%;
+    height: 100%;
+}
+
+.red {
+    background-color: rgb(134, 40, 40);
+}
+
+.green {
+    background-color: rgb(25, 100, 30);
+}
+
+.blue {
+    background-color: rgb(28, 45, 199);
+}
+
+.white {
+    background-color: white;
+}
+
+
+.item{
+    flex-basis: calc(680% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size: 20px;
+	height: calc(100% / 3);
+    color: white;
+}
