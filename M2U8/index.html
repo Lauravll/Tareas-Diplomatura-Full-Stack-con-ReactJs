@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <title>Cinema Buenos Aires</title>
+</head>
+
+<body class="bg-black">
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #05275a">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Cinema Buenos Aires</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="row">
+      <div class="col-md-7 mx-auto">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/imagen1.png" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Guardianes de la Galaxia</h5>
+                <p>Extreno el próximo miercóles.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/imagen2.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>John Wick</h5>
+                <p>Extreno el próximo jueves.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/imagen3.png" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Mario Bross</h5>
+                <p>Extreno el próximo miercóles.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-md-8 mx-auto">
+            <h1 class="text-white">Sacar Entradas</h1>
+            <p class="text-white">
+              Reservar y comprar tus entradas anticipadamente y accede a
+              nuestros beneficios.
+            </p>
+            <p>
+              <a href="comprar.html" class="btn btn-primary my-2">Comprar Entradas</a>
+              <a href="#cartelera" class="btn btn-secondary my-2">Ver Cartelera</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5" id="cartelera">
+        <div class="container">
+          <div class="row row-cols-md-3">
+            <div class="col">
+              <div class="card shadow-sm bg-dark">
+                <img src="img/imagen1.png" class="d-block w-100" alt="..." />
+
+                <div class="card-body">
+                  <p class="card-text text-white">
+                    Es una historia de aventuras y ciencia ficción en la que un grupo se unen para salvar la galaxia de una amenaza extraterrestre
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">2 horas</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm bg-dark">
+                <img src="img/imagen2.jpg" class="d-block w-100" alt="..." />
+
+                <div class="card-body">
+                  <p class="card-text text-white">
+                    "John Wick" es un thriller de acción en el que el ex-asesino a sueldo, busca venganza. Esto lo llevará a enfrentarse a antiguos colegas y a la mafia rusa.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">                 
+                    <small class="text-muted">3:30 horas</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm bg-dark">
+                <img src="img/imagen3.png" class="d-block w-100" alt="..." />
+
+                <div class="card-body">
+                  <p class="card-text text-white">
+                    La película sigue a los hermanos Mario y Luigi mientras luchan contra el malvado Koopa, quien intenta apoderarse del Reino Champiñón.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    </div>
+                    <small class="text-muted">2 horas</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
+    integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
