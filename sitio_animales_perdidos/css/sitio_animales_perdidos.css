@@ -21,7 +21,6 @@ nav ul li .active{
     height: 100%;
 }
 
-
 .servicio{
   border: 1px solic #ccc;
   border-radius: 10px;
@@ -31,7 +30,6 @@ nav ul li .active{
   gap: 32px;
   align-items: center;
 }
-
 
 .servicio .info h4{
     color: black;
@@ -54,3 +52,17 @@ nav ul li .active{
 .servicio:nth-child(even){
   flex-direction: row-reverse;
 }
+
+.formularioRegistro .botonRegistrar{
+  background-color: #1a0a3e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  cursor: pointer;
+}
+
+.mascotaPerdidaShow{
+  background-color: #1a0a3e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
