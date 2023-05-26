@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/sitio_animales_perdidos.css">
+  <title>Buscador de máscotas</title>
+</head>
+
+<body>
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #1a0a3e">
+      <div class="container">
+        <img src="img/logo.png" alt="..." class="rounded-circle" width="55" height="55">
+        <a class="navbar-brand text-white" href="#">Buscador de Mascotas</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="perdidos.html">Perdidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Encontrados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="consejos.html">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="novedades.html">Novedades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="py-5 container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <form for="nombre" class="formulario row g-3">
+            <h2>Registrar animal perdido</h2>
+            <div class="col-md-12">
+              <label for="imagenMascota" class="form-label">Selecciona una imagen:</label>
+              <input type="file" class="form-control-file" id="imagenMascota" name="image">
+            </div>
+
+            <div class="col-12">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="col-12">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" placeholder="apellido">
+            </div>
+            <div class="col-md-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Teléfono</label>
+              <input type="number" class="form-control" id="telefono" placeholder="Telefono">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+            </div>
+            <div class="col-md-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="ciudad">
+            </div>
+            <div class="col-md-6">
+              <label for="localidad" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="localidad">
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" style="background-color: #1a0a3e">Registrar mascota
+                perdida</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 color-footer">&copy; 2023 - Buscador de Mascotas</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
+    integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
