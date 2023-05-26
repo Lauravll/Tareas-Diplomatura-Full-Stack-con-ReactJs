@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/sitio_animales_perdidos.css">
+  <title>Buscador de máscotas</title>
+</head>
+
+<body>
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #1a0a3e">
+      <div class="container">
+        <img src="img/logo.png" alt="..." class="rounded-circle" width="55" height="55">
+        <a class="navbar-brand text-white" href="#">Buscador de Mascotas</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="perdidos.html">Perdidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Encontrados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="consejos.html">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="novedades.html">Novedades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="container">
+      <div class="row py-lg-3">
+        <div class="col-md-7 mx-auto">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/encuentro1.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Reencuentro</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/imagen1.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Dalmi - Se perdió el 24/5 en Temperley a las 16:00</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/imagen2.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Reina - Se perdió el 20/5 en Burzaco a las 17:00</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/encuentro2.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Reencuentro</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/imagen3.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Rocky - Se perdió el 13/4 en Ezeiza las 12:00 aprox</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/encuentro3.png" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <p class="text-white" style="background-color: #1a0a3e">Reencuentro</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="servicio holder">
+        <img src="img/encuentro1.png" class="d-block w-100" alt="..." />
+        <div class="info">
+          <h4>Nuevo Reencuentro</h4>
+          <p>A través de la página web de Susana, recibió un mensaje con una foto familiar: ¡era Paquita! Emocionada, se reunieron
+          nuevamente, sellando su reencuentro con abrazos y lamidas de felicidad.</p>
+        </div>
+      </div>
+      <div class="servicio holder">
+        <img src="img/encuentro2.png" class="d-block w-100" alt="..." />
+        <div class="info">
+          <h4>Nuevo Reencuentro</h4>
+          <p>Jorge recibió un mensaje en su página web informando que habían encontrado a Oliver, su perro pastor. Se reunieron
+          emocionados, agradeciendo a la página por el reencuentro.
+          </p>
+        </div>
+      </div>
+      <div class="servicio holder">
+        <img src="img/encuentro3.png" class="d-block w-100" alt="..." />
+        <div class="info">
+          <h4>Nuevo Reencuentro</h4>
+          <p>Evangelina recibió un mensaje que indicaba haber encontrado a Tom, su gato perdido. Se reunieron emocionados,
+          agradeciendo la ayuda que les permitió volver a estar juntos.
+          </p>
+        </div>
+      </div>
+      <div class="servicio holder">
+        <img src="img/imagen1.png" class="d-block w-100" alt="..." />
+        <div class="info">
+          <h4>Perdido</h4>
+          <p>Dalmi - Se perdió el 24/5 en Temperley a las 16:00.</p>
+        </div>
+      </div>
+      <div class="servicio holder">
+        <img src="img/imagen2.png" class="d-block w-100" alt="..." />
+        <div class="info">
+          <h4>Perdidoro</h4>
+          <p>Reina - Se perdió el 20/5 en Burzaco a las 17:00.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 color-footer">&copy; 2023 - Buscador de Mascotas</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
+    integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

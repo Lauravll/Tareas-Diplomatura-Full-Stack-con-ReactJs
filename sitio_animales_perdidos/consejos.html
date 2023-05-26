@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/sitio_animales_perdidos.css">
+  <title>Buscador de máscotas</title>
+</head>
+
+<body>
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #1a0a3e">
+      <div class="container">
+        <img src="img/logo.png" alt="..." class="rounded-circle" width="55" height="55">
+        <a class="navbar-brand text-white" href="#">Buscador de Mascotas</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="perdidos.html">Perdidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Encontrados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="consejos.html">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="novedades.html">Novedades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="py-1 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-normal">Pasos a seguir si se pierde una mascota</h1>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-sm text-center h-1"  style="height: 30px;">
+        <div class="row mb-3"   style="height: 30px;">
+          <div class="col-7 themed-grid-col">
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item">Busca en casa y en lugares cercanos como rincones y escondites</li>
+              <li class="list-group-item">Pregunta a los vecinos.</li>
+              <li class="list-group-item">Crea carteles con la foto y la información de contacto.</li>
+              <li class="list-group-item">Contacta a los refugios y organizaciones locales de control anima.</li>
+              <li class="list-group-item">Utiliza luces y sonidos llamativos durante la noche para ayudar a que tu mascota te encuentre.</li>
+              <li class="list-group-item">Registra tu mascota como perdido en páginas de internet y redes sociales.</li>
+              <li class="list-group-item">Utiliza señuelos y olores familiares cerca de tu casa.</li>
+            </ol>
+            <div class="bg-dark py-1 text-center container text-white pt-3">
+              <p>Recuerda que la clave es actuar rápido y difundir la información para aumentar las posibilidades de encontrar a tu
+                mascota</p>
+            </div>
+          </div>
+
+          <div class="col-5 themed-grid-col">
+            <div class="card shadow-sm bg-dark">
+              <img src="img/cartel.png" class="d-block w-100" alt="..." />
+          
+              <div class="card-body">
+                <p class="card-text text-white">
+                  Ejemplo cartel de perdida
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 color-footer">&copy; 2023 - Buscador de Mascotas</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
+    integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
