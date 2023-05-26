@@ -48,7 +48,7 @@ nav ul li .active{
 .servicio img{
     border-radius: 13px;
     display: block;
-    max-width: 3y00px;
+    max-width: 300px;
 }
 
 .servicio:nth-child(even){
