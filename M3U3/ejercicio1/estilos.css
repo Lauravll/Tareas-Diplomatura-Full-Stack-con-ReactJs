@@ -1,0 +1,14 @@
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 150px;
+}
+
+.nombre {
+    text-align: left;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/static/OpenSans-SemiBold.ttf') format('truetype');
+}
