@@ -41,17 +41,15 @@ var alumnos = [
 
 ];
 
-const aprobados = alumnos.filter(alumno => alumno.nota >= 7);
 const alumnosAprobados = document.getElementById('alumnosAprobados');
-
 var nombres = [];
+
+const aprobados = alumnos.filter(alumno => alumno.nota >= 7);
 
 for (var i = 0; i < aprobados.length; i++) {
   nombres.push(aprobados[i].nombre + ' Nota: ' + aprobados[i].nota);
 }
 
-var nombresParseados = nombres.join(', ');
-
-alumnosAprobados.innerText = nombresParseados;
+alumnosAprobados.innerText = nombres.join(', ');
 
 console.log(aprobados);
