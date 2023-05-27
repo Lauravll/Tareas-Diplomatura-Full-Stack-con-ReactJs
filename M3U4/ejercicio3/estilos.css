@@ -1,0 +1,32 @@
+.contenedor {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.color1 {
+  background-color: rgb(151, 119, 189);
+}
+
+.color2 {
+  background-color: rgb(100, 164, 210);
+}
+
+.color3 {
+  background-color: rgb(161, 238, 145);
+}
+
+.white {
+  background-color: white;
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid black;
+}
