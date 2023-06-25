@@ -10,15 +10,14 @@ const Header = (props) => {
           <img src="img/logo.png" alt="Buscador de Mascotas" className="rounded-circle" width="55" height="55" />
           <Navbar.Brand href="#">Buscador de Mascotas</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#perdidos">Perdidos</Nav.Link>
-            <Nav.Link href="#consejos">Consejos</Nav.Link>
-            <Nav.Link href="#novedades">Novedades</Nav.Link>
+            <Nav.Link href="home">Home</Nav.Link>
+            <Nav.Link href="perdidos">Perdidos</Nav.Link>
+            <Nav.Link href="consejos">Consejos</Nav.Link>
+            <Nav.Link href="novedades">Novedades</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
     </header> 
-
   )
 }
 
