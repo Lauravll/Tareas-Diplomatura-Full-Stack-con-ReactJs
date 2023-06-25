@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Header from './components/layouts/Header';
 import Nav from './components/layouts/Nav';
 import Footer from './components/layouts/Footer';
+import { Button } from 'react-bootstrap';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header></Header>
       <Nav></Nav>
       <Footer></Footer>
+      <Button variant="primary">Aceptar</Button>
     </div>
   );
 }
