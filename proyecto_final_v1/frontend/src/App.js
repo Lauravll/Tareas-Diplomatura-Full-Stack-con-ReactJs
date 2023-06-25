@@ -11,7 +11,6 @@ function App() {
       <Header></Header>
       <Nav></Nav>
       <Footer></Footer>
-      <Button variant="primary">Aceptar</Button>
     </div>
   );
 }
