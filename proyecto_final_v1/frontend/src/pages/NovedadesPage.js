@@ -1,83 +1,98 @@
 import React from "react";
 import '../styles/components/pages/NovedadesPage.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 const NovedadesPage = (props) => {
   return (
     <main>
-      <section class="py-5 text-center container">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <img src="img/perro.png" alt="..." class="rounded-circle" width="240" height="240" />
-              <h2 class="fw-normal">Perdidos</h2>
-              <p>En esta sesión encontrarás todos los animales reportados como perdidos.</p>
-              <p><a class="btn btn-secondary" href="perdidos.html">Ver sesión &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-              <img src="img/gato.png" alt="..." class="rounded-circle" width="240" height="240" />
-              <h2 class="fw-normal">Novedades</h2>
-              <p>En esta sesión encontrarás todas nuestras nuevas novedades.</p>
-              <p><a class="btn btn-secondary" href="#">Ver sesión &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-              <img src="img/consejos.png" alt="..." class="rounded-circle" width="240" height="240" />
-              <h2 class="fw-normal">Consejos</h2>
-              <p>Consejos para seguir ante la perdida de una mascota.</p>
-              <p><a class="btn btn-secondary" href="consejos.html">Ver sesión &raquo;</a></p>
-            </div>
+      <section class="container">
+        <div class="row py-lg-3">
+          <div class="col-md-7 mx-auto">
+            <Carousel fade>
+              <Carousel.Item>
+                <img src="img/encuentro1.png" className="d-block w-100" alt="Reencuentro" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Reencuentro</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src="img/imagen1.png" className="d-block w-100" alt="Dalmi" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Dalmi - Se perdió el 24/5 en Temperley a las 16:00</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src="img/imagen2.png" className="d-block w-100" alt="Reina" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Reina - Se perdió el 20/5 en Burzaco a las 17:00</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src="img/encuentro2.png" className="d-block w-100" alt="Reencuentro" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Reencuentro</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src="img/imagen3.png" className="d-block w-100" alt="Rocky" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Rocky - Se perdió el 13/4 en Ezeiza las 12:00 aprox</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img src="img/encuentro3.png" className="d-block w-100" alt="Reencuentro" />
+                <Carousel.Caption>
+                  <p className="text-white fondoVioleta">Reencuentro</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
           </div>
         </div>
       </section>
-      <div class="album py-5" id="cartelera">
-        <div class="container">
-          <div class="row row-cols-md-3">
-            <div class="col">
-              <div class="card shadow-sm bg-dark">
-                <img src="img/imagen1.png" class="d-block w-100" alt="..." />
 
-                <div class="card-body">
-                  <p class="card-text text-white">
-                    Dalmi - Se perdió el 24/5 en Temperley a las 16:00
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">2 horas</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm bg-dark">
-                <img src="img/imagen2.png" class="d-block w-100" alt="..." />
-
-                <div class="card-body">
-                  <p class="card-text text-white">
-                    Reina - Se perdió el 20/5 en Burzaco a las 17:00
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">3:30 horas</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm bg-dark">
-                <img src="img/imagen3.png" class="d-block w-100" alt="..." />
-
-                <div class="card-body">
-                  <p class="card-text text-white">
-                    Rocky - Se perdio el 13/4 en Ezeiza las 12:00 aproximadamente
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                    <small class="text-muted">2 horas</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section class="py-5">
+        <div class="servicio holder">
+          <img src="img/encuentro1.png" class="d-block w-100" alt="..." />
+          <div class="info">
+            <h4>Nuevo Reencuentro</h4>
+            <p>A través de la página web de Susana, recibió un mensaje con una foto familiar: ¡era Paquita! Emocionada, se reunieron
+              nuevamente, sellando su reencuentro con abrazos y lamidas de felicidad.</p>
           </div>
         </div>
-      </div>
+        <div class="servicio holder">
+          <img src="img/encuentro2.png" class="d-block w-100" alt="..." />
+          <div class="info">
+            <h4>Nuevo Reencuentro</h4>
+            <p>Jorge recibió un mensaje en su página web informando que habían encontrado a Oliver, su perro pastor. Se reunieron
+              emocionados, agradeciendo a la página por el reencuentro.
+            </p>
+          </div>
+        </div>
+        <div class="servicio holder">
+          <img src="img/encuentro3.png" class="d-block w-100" alt="..." />
+          <div class="info">
+            <h4>Nuevo Reencuentro</h4>
+            <p>Evangelina recibió un mensaje que indicaba haber encontrado a Tom, su gato perdido. Se reunieron emocionados,
+              agradeciendo la ayuda que les permitió volver a estar juntos.
+            </p>
+          </div>
+        </div>
+        <div class="servicio holder">
+          <img src="img/imagen1.png" class="d-block w-100" alt="..." />
+          <div class="info">
+            <h4>Perdido</h4>
+            <p>Se perdio perro dálmata, responde al nombre de Dalmi - Se perdió el 24/5 en Temperley a las 16:00.</p>
+          </div>
+        </div>
+        <div class="servicio holder">
+          <img src="img/imagen2.png" class="d-block w-100" alt="..." />
+          <div class="info">
+            <h4>Perdido</h4>
+            <p>Se perdio Reina el día 20/5 en Burzaco a las 17:00. Fue vista por el centro de la ciudad
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
   );

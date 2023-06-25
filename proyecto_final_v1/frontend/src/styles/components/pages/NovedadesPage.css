@@ -67,3 +67,11 @@ nav ul li .active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
+
+.fondoVioleta {
+  background-color: #1a0a3e;
+}
+
+fondoVioleta {
+  background-color: #1a0a3e;
+}
