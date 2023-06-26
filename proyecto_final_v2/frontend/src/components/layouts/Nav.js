@@ -4,6 +4,8 @@ import PerdidosPage from '../../pages/PerdidosPage';
 import ConsejosPage from '../../pages/ConsejosPage';
 import NovedadesPage from '../../pages/NovedadesPage';
 import { NavLink, BrowserRouter, Route, Routes } from 'react-router-dom';
+import ContactoPerdidosPage from '../../pages/ContactoPerdidosPage';
+import EncontradoPerdidoPage from '../../pages/EncontradoPerdidoPage';
 
 const Nav = () => {
   return (
@@ -32,11 +34,23 @@ const Nav = () => {
         className={({ isActive }) => (isActive ? "active" : "")}
       >
       </NavLink>
+      <NavLink
+        to="/contacto-perdidos"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+      </NavLink>
+      <NavLink
+        to="/encontrado-perdido"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+      </NavLink>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/perdidos" element={<PerdidosPage />} />
         <Route path="/consejos" element={<ConsejosPage />} />
         <Route path="/novedades" element={<NovedadesPage />} />
+        <Route path="/contacto-perdidos" element={<ContactoPerdidosPage />} />
+        <Route path="/encontrado-perdido" element={<EncontradoPerdidoPage />} />
       </Routes>
     </BrowserRouter>
   );
