@@ -6,6 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var perdidosRouter = require('./routes/perdidos');
+var consejosRouter = require('./routes/consejos');
+var novedadesRouter = require('./routes/novedades');
 
 var app = express();
 
@@ -21,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/perdidos', perdidosRouter);
+app.use('/consejos', consejosRouter);
+app.use('/novedades', novedadesRouter);
 
 app.get('/ruta1', function (req, res) {
   res.send('Hola soy la pagina de ruta1');
