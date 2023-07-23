@@ -26,9 +26,24 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 //Pruebas consultas
-pool.query('select * from empleados').then(function (resultados) { 
-  console.log(resultados);
-});
+// pool.query('select * from empleados').then(function (resultados) { 
+//   console.log(resultados);
+// });
+
+// var obj = {
+//   nombre: 'Juan',
+//   apellido: 'Lopez',
+//   trabajo: 'docente',
+//   edad: 38,
+//   salario: 1500,
+//   mail: 'juanlopez@gmail.com'
+// }
+
+// pool.query('insert into empleados set ?', [obj]).then(function (resultados) { 
+//   console.log(resultados);
+// });
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
