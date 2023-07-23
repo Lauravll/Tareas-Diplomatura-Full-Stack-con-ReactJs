@@ -43,6 +43,16 @@ app.use('/users', usersRouter);
 //   console.log(resultados);
 // });
 
+// var id = 24
+// var obj = {
+//   nombre: 'Pablo',
+//   apellido: 'Gomez',
+//   trabajo: 'Docente',
+// }
+
+// pool.query('update empleados set ? where id_emp=?', [obj, id]).then(function (resultados) {
+//   console.log(resultados);
+// });
 
 
 // catch 404 and forward to error handler
