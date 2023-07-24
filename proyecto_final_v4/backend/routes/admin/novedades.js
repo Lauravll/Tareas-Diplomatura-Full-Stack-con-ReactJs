@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   /* Carpetad entro de views */
   res.render('admin/novedades', {
-    layout: '/admin/layout'
+    layout: '/admin/layout',
+    persona: req.session.nombre
   });
 });
 
