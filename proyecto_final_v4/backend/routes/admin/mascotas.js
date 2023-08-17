@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
   res.render('admin/mascotas', {
     layout: '/admin/layout',
     persona: req.session.nombre,
-    title: 'Buscador de Mascotas' 
+    title: 'Buscador de Mascotas'
   });
 });
 
