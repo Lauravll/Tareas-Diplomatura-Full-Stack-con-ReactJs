@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+var mascotasModel = require('./../../models/mascotasModel');
+  
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  /* Carpetad entro de views */
+router.get('/', async function (req, res, next) {
+
+  var data = await mascotasModel.getMascotasWithDetails();
+
   res.render('admin/mascotas', {
     layout: '/admin/layout',
     persona: req.session.nombre,
