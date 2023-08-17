@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   /* Carpetad entro de views */
-  res.render('admin/perdidos', {
+  res.render('admin/mascotas', {
     layout: '/admin/layout',
     persona: req.session.nombre,
     title: 'Buscador de Mascotas' 

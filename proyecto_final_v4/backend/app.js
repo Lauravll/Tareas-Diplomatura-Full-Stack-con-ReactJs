@@ -13,7 +13,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
-var perdidosRouter = require('./routes/admin/perdidos');
+var perdidosRouter = require('./routes/admin/mascotas');
 
 var app = express();
 
@@ -50,7 +50,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
-app.use('/admin/perdidos', secured, perdidosRouter);
+app.use('/admin/mascotas', secured, perdidosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

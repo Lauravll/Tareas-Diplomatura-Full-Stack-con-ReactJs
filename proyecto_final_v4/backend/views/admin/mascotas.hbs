@@ -12,13 +12,41 @@
     <section class="py-1 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-normal">Últimos reportados perdidos</h1>
+          <h1 class="fw-normal">Listado de mascotas perdidas</h1>
           <p>
-            <a href="/contacto-perdidos" class="btn my-2 text-white fondoVioleta" class="background-violeta">Registrar mascota perdida</a>
+            <a href="/contacto-mascotas" class="btn my-2 text-white fondoVioleta" class="background-violeta">Registrar mascota perdida</a>
           </p>
         </div>
       </div>
     </section>
+
+    <section class="py-1 text-center container">
+
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Raza</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td class="text-end">
+              <a class="boton editar" href="/admin/novedades/modificar/">Editar</a>
+              <a class="boton borrar" href="/admin/novedades/eliminar/">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     
     <section class="album py-1 container" id="cartelera">
       <div class="container">
