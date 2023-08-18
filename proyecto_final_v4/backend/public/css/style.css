@@ -72,10 +72,15 @@ nav ul li .active {
   background-color: #e6e6e6;
 }
 
-.background-violeta {
+.fondoVioleta {
   background-color: #1a0a3e;
 }
 
-.fondoVioleta {
+.fondoVioleta:hover {
   background-color: #1a0a3e;
+}
+
+.btn-gris {
+  background-color: rgb(101, 101, 88);
+  color: white;
 }

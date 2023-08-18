@@ -4,7 +4,7 @@
     <section>
       <div class="container py-5 h-200">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <p class="text-end">Hola {{persona}}! <a href="/admin/login/logout" class="btn btn-danger">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a></p>
+          <p class="text-end">Hola {{persona}}! <a href="/admin/login/logout" class="btn btn-gris">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a></p>
         </div>
       </div>
     </section>
@@ -14,7 +14,7 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-normal">Listado de mascotas perdidas</h1>
           <p>
-            <a href="/contacto-mascotas" class="btn my-2 text-white fondoVioleta" class="background-violeta">Registrar mascota perdida</a>
+            <a href="/admin/mascotas/agregar" class="btn text-white fondoVioleta"><i class="fa fa-plus" aria-hidden="true"></i> Registrar mascota perdida</a>
           </p>
         </div>
       </div>
@@ -33,140 +33,30 @@
             <th scope="col">Pelaje</th>
             <th scope="col">Tamaño</th>
             <th scope="col">Contacto</th>
-            <th scope="col">Detalle</th>
             <th scope="col">Perdido</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dalmi</td>
-            <td>Perro</td>
-            <td>Dalmata</td>
-            <td>Marrones</td>
-            <td>Blanco con manchas</td>
-            <td>Grande</td>
-            <td>Mark</td>
-            <td>Se perdio en Lomas de Zamora</td>
-            <td>Si</td>
-            <td class="text-end">
-              <a class="btn btn-secondary" href=""><i class="fa fa-pencil-alt" aria-hidden="true"></i>Editar</a>
-              <a class="btn btn-secondary" href=""><i class="fa fa-trash" aria-hidden="true"></i>Borrar</a>
-            </td>
-          </tr>
+          {{#each mascotas}}
+            <tr>
+              <th scope="row">{{id_mascota}}</th>
+              <td>{{nombre_mascota}}</td>
+              <td>{{especie}}</td>
+              <td>{{raza}}</td>
+              <td>{{ojos}}</td>
+              <td>{{pelaje_color}} - {{pelaje_tipo}}</td>
+              <td>{{tamaño}}</td>
+              <td>{{nombre_contacto}} {{apellido_contacto}}</td>
+              <td>{{perdido}}</td>
+              <td class="text-end">
+                <a class="btn btn-secondary" href="{{id_mascota}}"><i class="fa fa-pencil-alt" aria-hidden="true"></i>Editar</a>
+                <a class="btn btn-secondary" href="{{id_mascota}}"><i class="fa fa-trash" aria-hidden="true"></i>Borrar</a>
+              </td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
-    </section>
-
-    
-    <section class="album py-1 container" id="cartelera">
-      <div class="container">
-        <div class="row row-cols-md-3">
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen1.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Dalmi - Se perdió el 24/5 en Temperley a las 16:00
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <a href="/encontrado-perdido" class="btn btn-sm btn-outline-secondary">Ver</a>
-                  </div>
-                  <small class="text-muted">2 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen2.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Reina - Se perdió el 20/5 en Burzaco a las 17:00
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="/encontrado-perdido" class="btn btn-sm btn-outline-secondary">Ver</a>
-                  <small class="text-muted">3:30 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen3.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Rocky - Se perdio el 13/4 en Ezeiza las 12:00 aproximadamente
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="/encontrado-perdido" class="btn btn-sm btn-outline-secondary">Ver</a>
-                  <small class="text-muted">2 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen6.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Dalmi - Se perdió el 24/5 en Temperley a las 16:00
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  </div>
-                  <small class="text-muted">2 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen4.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Reina - Se perdió el 20/5 en Burzaco a las 17:00
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  </div>
-                  <small class="text-muted">3:30 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm bg-dark">
-              <img src="/images/imagen5.png" class="d-block w-100" alt="..." />
-    
-              <div class="card-body">
-                <p class="card-text text-white">
-                  Rocky - Se perdio el 13/4 en Ezeiza las 12:00 aproximadamente
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                  <small class="text-muted">2 horas</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-      </div>
     </section>
   </main>
 </body>

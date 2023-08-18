@@ -25,14 +25,18 @@ async function getMascotasWithDetails() {
         p.descripcion AS provincia,
         m.fecha_perdido,
         m.fecha_registrado,
-        m.perdido
+        CASE
+        WHEN m.perdido = 1 THEN 'Si'
+        WHEN m.perdido = 2 THEN 'No'
+        ELSE 'Desconocido'
+      END AS perdido
       FROM
         Mascotas m
-        JOIN Especies e ON m.id_especie = e.id_especie
-        JOIN Contactos c ON m.id_contacto = c.id_contacto
-        JOIN Ubicaciones u ON c.id_ubicacion = u.id_ubicacion
-        JOIN Localidades l ON u.id_localidad = l.id_localidad
-        JOIN Provincias p ON u.id_provincia = p.id_provincia;
+        LEFT JOIN Especies e ON m.id_especie = e.id_especie
+        LEFT JOIN Contactos c ON m.id_contacto = c.id_contacto
+        LEFT JOIN Ubicaciones u ON c.id_ubicacion = u.id_ubicacion
+        LEFT JOIN Localidades l ON u.id_localidad = l.id_localidad
+        LEFT JOIN Provincias p ON u.id_provincia = p.id_provincia;
     `;
     var rows = await pool.query(query);
     return rows;
