@@ -3,49 +3,65 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <form for="nombre" class="formulario row g-3" action="/admin/mascotas/agregar" method="post">
-        <h2>Registrar animal perdido</h2>
-        <div class="col-md-12">
-          <label for="imagenMascota" class="form-label">Selecciona una imagen:</label>
-          <input type="file" class="form-control-file" id="imagenMascota" name="image" />
+    <form for="nombre" class="formulario row g-3" action="/admin/mascotas/agregar" method="post">
+      <h2>Registrar animal perdido</h2>
+    
+      <div class="col-md-12 mb-3">
+        <label for="imagenMascota" class="form-label">Selecciona una imagen:</label>
+        <input type="file" class="form-control-file" id="imagenMascota" name="image" />
+      </div>
+    
+      <fieldset class="col-md-12 border p-3 mb-3">
+        <legend class="h5">Datos del Contacto:</legend>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+          </div>
+          <div class="col-md-6">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido" />
+          </div>
         </div>
-        <div class="col-12">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+        <div class="row">
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email"/>
+          </div>
+          <div class="col-md-6">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="number" class="form-control" id="telefono" placeholder="Telefono" />
+          </div>
         </div>
-        <div class="col-12">
-          <label for="apellido" class="form-label">Apellido</label>
-          <input type="text" class="form-control" id="apellido" placeholder="Apellido" />
+        <div class="row">
+          <div class="col-md-6">
+            <label for="ciudad" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="ciudad" placeholder="Provincia"/>
+          </div>
+          <div class="col-md-6">
+            <label for="localidad" class="form-label">Localidad</label>
+            <input type="text" class="form-control" id="localidad" placeholder="Localidad"/>
+          </div>
         </div>
-        <div class="col-md-12">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" />
-        </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">Teléfono</label>
-          <input type="number" class="form-control" id="telefono" placeholder="Telefono" />
-        </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">Direccion</label>
+        <div class="col-12 mb-3">
+          <label for="direccion" class="form-label">Direccion</label>
           <input type="text" class="form-control" id="direccion" placeholder="Direccion" />
         </div>
-        <div class="col-md-6">
-          <label for="ciudad" class="form-label">Ciudad</label>
-          <input type="text" class="form-control" id="ciudad" />
-        </div>
-        <div class="col-md-6">
-          <label for="localidad" class="form-label">Localidad</label>
-          <input type="text" class="form-control" id="localidad" />
-        </div>
-        <div class="col-md-12">
+      </fieldset>
+    
+      <fieldset class="col-md-12 border p-3">
+        <legend class="h5">Datos de la Mascota:</legend>
+        <div class="col-md-12 mb-3">
           <label for="caracteristicas">Ingrese Características</label>
           <textarea class="form-control" id="caracteristicas" rows="3"></textarea>
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary botonRegistrar">Registrar mascota
-            perdida</button>
-        </div>
-      </form>
+      </fieldset>
+    
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary botonRegistrar">Registrar mascota perdida</button>
+      </div>
+    </form>
+
     </div>
   </div>
 </section>
