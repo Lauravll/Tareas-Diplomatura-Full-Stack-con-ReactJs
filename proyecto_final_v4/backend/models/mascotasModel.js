@@ -48,15 +48,8 @@ async function getMascotasWithDetails() {
 
 async function insertMascota(obj) {
   try {
-    console.log('prueba' + obj.perdido)
     if (obj.perdido == undefined) {
-      obj.perdido = 1;
-    } else {
-      if (obj.perdido == on) {
-        obj.perdido = 1;
-      } else {
-        obj.perdido = 0;
-      }
+      obj.perdido = 0;
     }
     const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie) values (?, ?, ?, ?, ?, ?, ?, ?)";
     const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie) ]);
