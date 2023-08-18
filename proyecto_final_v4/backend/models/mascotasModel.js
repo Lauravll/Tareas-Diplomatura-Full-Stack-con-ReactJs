@@ -47,11 +47,30 @@ async function getMascotasWithDetails() {
 
 async function insertMascota(obj) {
   try {
+
+    // Insertar datos de ubicación
+    const id_ubicacion = await insertUbicacionContacto(obj);
+    if (id_ubicacion != undefined) {
+      obj.id_ubicacion = id_ubicacion;
+    }
+    //Finalizo insertar ubicacion
+    
+    //Inserto datos de contacto
+    //Inserto datos de contacto
+    const id_contacto = await insertContacto(obj);
+    if (id_contacto != undefined) {
+      obj.id_contacto = id_contacto;
+    }
+    //Finalizo insertar datos de contacto
+
+    //Inserto datos de la mascota
     if (obj.perdido == undefined) {
       obj.perdido = 0;
     }
-    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie) values (?, ?, ?, ?, ?, ?, ?, ?)";
-    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie) ]);
+    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto)]);
+    //Finalizo insertar datos de mascota
+
     return rows;
 
   } catch (error) {
@@ -60,6 +79,31 @@ async function insertMascota(obj) {
   };
 };
 
+async function insertUbicacionContacto(obj) {
+  try {
+    const query = "insert into ubicaciones (id_localidad, id_provincia, calle, numero) values (?, ?, ?, ?)";
+    const rows = await pool.query(query, [parseInt(obj.id_localidad), parseInt(obj.id_provincia), obj.calle, obj.numero]);
+    return rows.insertId;
 
+  } catch (error) {
+    console.log(error);
+    throw error;
+  };
+};
+
+
+async function insertContacto(obj) {
+  try {
+    if (obj.esDuenio == undefined) {
+      obj.esDuenio = 0;
+    }
+    const query = "insert into contactos (nombre, apellido, email, telefono, esDuenio, id_ubicacion) values (?, ?, ?, ?, ?, ?)";
+    const rows = await pool.query(query, [obj.nombre, obj.apellido, obj.email, parseInt(obj.telefono), parseInt(obj.esDuenio), parseInt(obj.id_ubicacion)]);
+    return rows.insertId;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  };
+};
 
 module.exports = { getMascotasWithDetails, insertMascota }

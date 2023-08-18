@@ -26,7 +26,6 @@ router.get('/agregar', async (req, res, next) => {
 })
 
 router.post('/agregar', async (req, res, next) => {
-  console.log(req.body);
   try {
     if (req.body.nombre_mascota != "") {
       await mascotasModel.insertMascota(req.body);
