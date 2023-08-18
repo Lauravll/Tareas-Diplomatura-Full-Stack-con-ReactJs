@@ -25,4 +25,27 @@ router.get('/agregar', async (req, res, next) => {
   }
 })
 
+router.post('/agregar', async (req, res, next) => {
+  console.log(req.body);
+  try {
+    if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
+      await mascotasModel.insertMascota(req.body);
+      res.redirect('/admin/mascotas')
+    } else {
+      res.render('admin/agregar', {
+        layout: 'admin/layout',
+        error: true,
+        message: "Todos los campos son requeridos"
+      })
+    }
+  } catch (error) {
+    console.log(error)
+    res.render('admin/agregar', {
+      layout: 'admin/layout',
+      error: true,
+      message: "No se cargó la mascota"
+    })
+  }
+})
+
 module.exports = router;

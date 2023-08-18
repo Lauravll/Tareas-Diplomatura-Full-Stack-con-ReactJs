@@ -84,3 +84,7 @@ nav ul li .active {
   background-color: rgb(101, 101, 88);
   color: white;
 }
+
+.tamanio_datos {
+  height: 450px;
+}

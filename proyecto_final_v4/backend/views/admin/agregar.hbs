@@ -8,12 +8,12 @@
 
         <div class="col-md-12 mb-3">
           <label for="imagenMascota" class="form-label">Selecciona una imagen:</label>
-          <input type="file" class="form-control-file" id="imagenMascota" name="image" />
+          <input type="file" class="form-control-file" id="imagenMascota" />
         </div>
 
         <div class="row">
           <div class="col-md-6">
-            <fieldset class="col-md-12 border p-3 mb-3" style="height: 450px;">
+            <fieldset class="col-md-12 border p-3 mb-3 tamanio_datos">
               <div class="row">
                 <div class="col-md-8">
                   <legend class="h5">Datos del Contacto:</legend>
@@ -21,55 +21,65 @@
                 <div class="col-md-4">
                   <label>
                     Es el Dueño?
-                    <input type="checkbox">
+                    <input type="checkbox" name="esDuenio">
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre"/>
                 </div>
                 <div class="col-md-6">
                   <label for="apellido" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="Apellido" />
+                  <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido"/>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email" />
+                  <input type="email" class="form-control" id="email" placeholder="Email" name="email"/>
                 </div>
                 <div class="col-md-6">
                   <label for="telefono" class="form-label">Teléfono</label>
-                  <input type="number" class="form-control" id="telefono" placeholder="Telefono" />
+                  <input type="number" class="form-control" id="telefono" placeholder="Telefono" name="telefono"/>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="ciudad" class="form-label">Provincia</label>
-                  <input type="text" class="form-control" id="ciudad" placeholder="Provincia" />
+                  <label for="provincia" class="form-label">Provincia</label>
+                  <select class="form-select" aria-label="Default select example" name="provincia">
+                    <option selected>Seleccione una Provincia</option>
+                    <option value="1">Buenos Aires</option>
+                    <option value="2">Catamarca</option>
+                    <option value="3">Chaco</option>
+                  </select>
                 </div>
                 <div class="col-md-6">
                   <label for="localidad" class="form-label">Localidad</label>
-                  <input type="text" class="form-control" id="localidad" placeholder="Localidad" />
+                  <select class="form-select" aria-label="Default select example" name="localidad">
+                    <option selected>Seleccione una Localidad</option>
+                    <option value="1">La Plata</option>
+                    <option value="2">Mar del Plata</option>
+                    <option value="3">Bahía Blanca</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <label for="calle" class="form-label">Calle</label>
-                  <input type="text" class="form-control" id="calle" placeholder="Calle" />
+                  <input type="text" class="form-control" id="calle" placeholder="Calle" name="calle"/>
                 </div>
                 <div class="col-md-6">
                   <label for="numero" class="form-label">Número</label>
-                  <input type="text" class="form-control" id="numero" placeholder="Número" />
+                  <input type="text" class="form-control" id="numero" placeholder="Número" name="numero"/>
                 </div>
               </div>
             </fieldset>
           </div>
 
           <div class="col-md-6">
-            <fieldset class="border p-3" style="height: 450px;">
+            <fieldset class="border p-3 tamanio_datos">
               <div class="row">
                 <div class="col-md-8">
                   <legend class="h5">Datos de la Mascota:</legend>
@@ -77,7 +87,7 @@
                 <div class="col-md-4">
                   <label>
                     Sigue Perdido?
-                    <input type="checkbox">
+                    <input type="checkbox" name="perdido">
                   </label>
                 </div>
               </div>
@@ -93,33 +103,41 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="nombre" class="form-label">Especie</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre_mascota" />
+                  <label for="especie" class="form-label">Especie</label>
+                  <select class="form-select" aria-label="Default select example" name="id_especie">
+                    <option selected>Seleccione tipo de Especie</option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                  </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="raza" class="form-label">Color ojos</label>
-                  <input type="text" class="form-control" id="raza" placeholder="Raza" name="raza" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <label for="nombre" class="form-label">Pelaje Tipo</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre_mascota" />
-                </div>
-                <div class="col-md-6">
-                  <label for="raza" class="form-label"> Pelaje Color</label>
-                  <input type="text" class="form-control" id="raza" placeholder="Raza" name="raza" />
+                  <label for="ojos" class="form-label">Color ojos</label>
+                  <input type="text" class="form-control" id="ojos" placeholder="Color ojos" name="ojos" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="nombre" class="form-label">Tamaño</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre_mascota" />
+                  <label for="pelaje_tipo" class="form-label">Pelaje Tipo</label>
+                  <input type="text" class="form-control" id="pelaje_tipo" placeholder="Pelaje Tipo" name="pelaje_tipo" />
+                </div>
+                <div class="col-md-6">
+                  <label for="pelaje_color" class="form-label"> Pelaje Color</label>
+                  <input type="text" class="form-control" id="pelaje_color" placeholder="Pejale Color" name="pelaje_color" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="tamanio" class="form-label">Tamaño</label>
+                  <input type="text" class="form-control" id="tamanio" placeholder="Tamaño" name="tamanio" />
+                </div>
+                <div class="col-md-6">
+                  <label for="edad" class="form-label">Edad</label>
+                  <input type="text" class="form-control" id="edad" placeholder="Edad" name="edad" />
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <label for="caracteristicas">Otras Características</label>
-                <textarea class="form-control" id="caracteristicas" rows="3"></textarea>
+                <label for="otras_caracteristicas">Otras Características</label>
+                <textarea class="form-control" id="caracteristicas" rows="3" name="otras_caracteristicas"></textarea>
               </div>
             </fieldset>
           </div>
