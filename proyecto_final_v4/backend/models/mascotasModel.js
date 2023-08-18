@@ -56,7 +56,6 @@ async function insertMascota(obj) {
     //Finalizo insertar ubicacion
     
     //Inserto datos de contacto
-    //Inserto datos de contacto
     const id_contacto = await insertContacto(obj);
     if (id_contacto != undefined) {
       obj.id_contacto = id_contacto;
@@ -91,7 +90,6 @@ async function insertUbicacionContacto(obj) {
   };
 };
 
-
 async function insertContacto(obj) {
   try {
     if (obj.esDuenio == undefined) {
@@ -106,4 +104,10 @@ async function insertContacto(obj) {
   };
 };
 
-module.exports = { getMascotasWithDetails, insertMascota }
+async function deleteMascotaById(id) {
+  var query = "delete from mascotas where id_mascota = ? ";
+  var rows = await pool.query(query, [id]);
+  return rows;
+}
+
+module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById }

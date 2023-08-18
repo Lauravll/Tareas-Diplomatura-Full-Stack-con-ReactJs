@@ -47,4 +47,10 @@ router.post('/agregar', async (req, res, next) => {
   }
 })
 
+router.get('/eliminar/:id', async (req, res, next) => {
+  var id = req.params.id //Para capturar el id
+  await mascotasModel.deleteMascotaById(id);
+  res.redirect('/admin/mascotas')
+})
+
 module.exports = router;

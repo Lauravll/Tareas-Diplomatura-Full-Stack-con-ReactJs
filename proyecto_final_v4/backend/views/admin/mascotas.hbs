@@ -50,8 +50,8 @@
               <td>{{nombre_contacto}} {{apellido_contacto}}</td>
               <td>{{perdido}}</td>
               <td class="text-end">
-                <a class="btn btn-secondary" href="{{id_mascota}}"><i class="fa fa-pencil-alt" aria-hidden="true"></i>Editar</a>
-                <a class="btn btn-secondary" href="{{id_mascota}}"><i class="fa fa-trash" aria-hidden="true"></i>Borrar</a>
+                <a class="btn btn-secondary" href="/admin/mascotas/editar/{{id_mascota}}"><i class="fa fa-pencil-alt" aria-hidden="true"></i>Editar</a>
+                <a class="btn btn-secondary" href="/admin/mascotas/eliminar/{{id_mascota}}"><i class="fa fa-trash" aria-hidden="true"></i>Borrar</a>
               </td>
             </tr>
           {{/each}}
