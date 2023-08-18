@@ -28,8 +28,7 @@ async function getMascotasWithDetails() {
         m.fecha_registrado,
         CASE
         WHEN m.perdido = 1 THEN 'Si'
-        WHEN m.perdido = 2 THEN 'No'
-        ELSE 'Desconocido'
+        ELSE 'No'
       END AS perdido
       FROM
         Mascotas m

@@ -147,6 +147,11 @@
         <div class="col-12">
           <button type="submit" class="btn btn-primary botonRegistrar">Registrar mascota perdida</button>
         </div>
+        </br>
+        {{#if error}}
+        <div class="form-check d-flex justify-content-start mb-4">
+          <label class="form-check-label" for="form1Example3"> {{message}} </label>
+        {{/if}}
       </form>
 
     </div>
