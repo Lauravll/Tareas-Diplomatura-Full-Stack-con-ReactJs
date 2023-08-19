@@ -53,4 +53,42 @@ router.get('/eliminar/:id', async (req, res, next) => {
   res.redirect('/admin/mascotas')
 })
 
+router.get('/editar/:id', async (req, res, next) => {
+  var id = req.params.id //Para capturar el id
+  var mascota = await mascotasModel.getMascotadByIdWithDetails(id);
+  res.render('admin/modificar', {
+    layout: "admin/layout",
+    mascota: mascota
+  })
+})
+
+router.post('/modificar', async (req, res, next) => {
+  try {
+
+    var obj = {
+      nombre_mascota: req.body.nombre_mascota,
+      raza: req.body.raza,
+      ojos: req.body.ojos,
+      pelaje_color: req.body.pelaje_color,
+      pelaje_tipo: req.body.pelaje_tipo,
+      tamanio: req.body.tamanio,
+      otras_caracteristicas: req.body.otras_caracteristicas,
+      perdido: req.body.perdido
+    }
+
+    console.log(obj, req.body.id_mascota);
+
+    await mascotasModel.modifyMascotaById(obj, req.body.id_mascota);
+    res.redirect('/admin/mascotas');
+
+  } catch (error) {
+    console.log(error);
+    res.render('admin/modificar', {
+      layout: "admin/layout",
+      error: true,
+      message: "No se modificó la mascota"
+    })
+  }
+})
+
 module.exports = router;
