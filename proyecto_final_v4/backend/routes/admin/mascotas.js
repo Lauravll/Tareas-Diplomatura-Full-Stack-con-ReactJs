@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var mascotasModel = require('./../../models/mascotasModel');
-  
+var util = require('util');
+var cloudinary = require('cloudinary').v2;
+const uploader = util.promisify(cloudinary.uploader.upload);
+
 router.get('/', async function (req, res, next) {
 
   const mascotas = await mascotasModel.getMascotasWithDetails();
@@ -27,8 +30,19 @@ router.get('/agregar', async (req, res, next) => {
 
 router.post('/agregar', async (req, res, next) => {
   try {
+
+    console.log('imagen'+ req.files.imagen)
+    var img_id = "";
+    if (req.files && Object.keys(req.files).length > 0) {
+      imagen = req.files.imagen;
+      img_id = (await uploader(imagen.tempFilePath)).public_id;
+    }
+
     if (req.body.nombre_mascota != "") {
-      await mascotasModel.insertMascota(req.body);
+      await mascotasModel.insertMascota({
+        ...req.body,
+        img_id
+      });
       res.redirect('/admin/mascotas')
     } else {
       res.render('admin/agregar', {

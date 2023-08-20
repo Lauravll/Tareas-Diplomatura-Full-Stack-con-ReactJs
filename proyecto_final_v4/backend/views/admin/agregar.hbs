@@ -3,12 +3,12 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-      <form for="nombre" class="formulario row g-3 " action="/admin/mascotas/agregar" method="post">
+      <form for="nombre" class="formulario row g-3 " action="/admin/mascotas/agregar" method="post" enctype="multipart/form-data">
         <h2>Registrar animal perdido</h2>
 
         <div class="col-md-12 mb-3">
-          <label for="imagenMascota" class="form-label">Selecciona una imagen:</label>
-          <input type="file" class="form-control-file" id="imagenMascota" />
+          <label for="imagen" class="form-label">Selecciona una imagen:</label>
+          <input type="file" class="form-control-file" id="imagen" name="imagen"/>
         </div>
 
         <div class="row">

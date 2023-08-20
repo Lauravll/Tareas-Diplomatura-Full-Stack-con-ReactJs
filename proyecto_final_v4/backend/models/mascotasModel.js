@@ -15,6 +15,7 @@ async function getMascotasWithDetails() {
         m.tamanio,
         m.otras_caracteristicas,
         m.edad,
+        m.img_id,
         c.id_contacto,
         c.nombre AS nombre_contacto,
         c.apellido AS apellido_contacto,
@@ -66,8 +67,9 @@ async function insertMascota(obj) {
     if (obj.perdido == undefined) {
       obj.perdido = 0;
     }
-    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto)]);
+    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto, img_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    console.log('datos finales'+ obj)
+    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto), obj.img_id]);
     //Finalizo insertar datos de mascota
 
     return rows;
@@ -130,6 +132,7 @@ async function getMascotadByIdWithDetails(id) {
         m.tamanio,
         m.otras_caracteristicas,
         m.edad,
+        m.img_id,
         c.id_contacto,
         c.nombre AS nombre_contacto,
         c.apellido AS apellido_contacto,
