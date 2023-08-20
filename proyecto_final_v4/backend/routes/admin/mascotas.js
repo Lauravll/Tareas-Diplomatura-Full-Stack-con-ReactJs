@@ -7,7 +7,26 @@ const uploader = util.promisify(cloudinary.uploader.upload);
 
 router.get('/', async function (req, res, next) {
 
-  const mascotas = await mascotasModel.getMascotasWithDetails();
+  let mascotas = await mascotasModel.getMascotasWithDetails();
+
+  mascotas = mascotas.map(mascota => {
+    if (mascota.img_id) {
+      const imagen = cloudinary.image(mascota.img_id, {
+        width: 80,
+        height: 80,
+        crop: 'fill'
+      });
+      return {
+        ...mascota,
+        imagen
+      }
+    } else {
+      return {
+        ...mascota,
+        imagen: ""
+      }
+    }
+  });
 
   res.render('admin/mascotas', {
     layout: '/admin/layout',
