@@ -112,7 +112,7 @@ async function deleteMascotaById(id) {
   return rows;
 }
 
-async function getMascotadById(id) {
+async function getMascotaById(id) {
   var query = "select * from mascotas where id_mascota = ? ";
   var rows = await pool.query(query, [id]);
   return rows[0];
@@ -177,4 +177,4 @@ async function modifyMascotaById(obj, id) {
   }
 } 
 
-module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotadById, getMascotadByIdWithDetails, modifyMascotaById }
+module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById }

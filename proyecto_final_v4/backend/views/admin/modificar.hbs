@@ -12,6 +12,10 @@
         <div class="col-md-12 mb-3">
           <label for="imagen" class="form-label">Selecciona una imagen:</label>
           <input type="file" class="form-control-file" id="imagen" name="imagen" />
+          <p>
+            <label class="form-label"><input type="checkbox" name="img_delete" id="img_delete" value="1">¿Desea eliminar la imagen actual?</label>
+            <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+          </p>
         </div>
 
         <div class="row">

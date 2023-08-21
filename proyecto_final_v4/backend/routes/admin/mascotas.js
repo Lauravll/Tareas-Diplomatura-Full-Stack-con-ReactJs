@@ -4,6 +4,7 @@ var mascotasModel = require('./../../models/mascotasModel');
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
 const uploader = util.promisify(cloudinary.uploader.upload);
+const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function (req, res, next) {
 
@@ -82,6 +83,12 @@ router.post('/agregar', async (req, res, next) => {
 
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id //Para capturar el id
+
+  let mascota = await mascotasModel.getMascotaById(id);
+  if (mascota.img_id) {
+    await (destroy(mascota.img_id));
+  }
+
   await mascotasModel.deleteMascotaById(id);
   res.redirect('/admin/mascotas')
 })
@@ -98,6 +105,22 @@ router.get('/editar/:id', async (req, res, next) => {
 router.post('/modificar', async (req, res, next) => {
   try {
 
+    let img_id = req.body.img_original;
+    let borrar_img_vieja = false;
+    if (req.body.img_delete === "1") {
+      img_id = null;
+      borrar_img_vieja = true;
+    } else {
+      if (req.files && Object.keys(req.files).length > 0) {
+        imagen = req.files.imagen;
+        img_id = (await uploader(imagen.tempFilePath)).public_id;
+        borrar_img_vieja = true;
+      }
+    }
+    if (borrar_img_vieja && req.body.img_original) {
+      await (destroy(req.body.img_original));
+    }
+
     var obj = {
       nombre_mascota: req.body.nombre_mascota,
       raza: req.body.raza,
@@ -106,7 +129,8 @@ router.post('/modificar', async (req, res, next) => {
       pelaje_tipo: req.body.pelaje_tipo,
       tamanio: req.body.tamanio,
       otras_caracteristicas: req.body.otras_caracteristicas,
-      perdido: req.body.perdido
+      perdido: req.body.perdido,
+      img_id
     }
 
     console.log(obj, req.body.id_mascota);
