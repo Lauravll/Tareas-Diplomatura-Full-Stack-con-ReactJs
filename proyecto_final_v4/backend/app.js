@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fileUpload = require('express-fileupload');
+var cors = require('cors');
 
 require('dotenv').config();
 
@@ -15,6 +16,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
 var perdidosRouter = require('./routes/admin/mascotas');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -58,6 +60,7 @@ app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
 app.use('/admin/mascotas', secured, perdidosRouter);
+app.use('/api', cors(), apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
