@@ -1,7 +1,7 @@
 import React from "react";
 
 const MascotaItem = (props) => {
-    const {nombre_mascota, imagen, body} = props;
+  const { nombre_mascota_item, imagen, body} = props;
 
   return (
         <div className="col mascotas">
@@ -10,7 +10,7 @@ const MascotaItem = (props) => {
 
             <div className="card-body">
               <p className="card-text text-white">
-                {nombre_mascota}
+                {nombre_mascota_item}
               </p>
               <div className="d-flex justify-content-between align-items-center">
                 <div>
