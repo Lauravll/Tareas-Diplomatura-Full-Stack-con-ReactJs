@@ -69,9 +69,14 @@ async function insertMascota(obj) {
     if (obj.perdido == undefined) {
       obj.perdido = 0;
     }
-    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto, img_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    //Tomo fecha actual 
+    const currentDate = new Date(); // Obtiene la fecha y hora actual
+    const formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' '); // Formatea la fecha como 'YYYY-MM-DD HH:MM:SS'
+
+    const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto, img_id, edad, fecha_registrado) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     console.log('datos finales'+ obj)
-    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto), obj.img_id]);
+    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto), obj.img_id, parseInt(obj.edad), formattedDate]);
     //Finalizo insertar datos de mascota
 
     return rows;

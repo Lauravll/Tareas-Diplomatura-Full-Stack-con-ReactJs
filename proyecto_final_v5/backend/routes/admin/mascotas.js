@@ -50,8 +50,6 @@ router.get('/agregar', async (req, res, next) => {
 
 router.post('/agregar', async (req, res, next) => {
   try {
-
-    console.log('imagen'+ req.files.imagen)
     var img_id = "";
     if (req.files && Object.keys(req.files).length > 0) {
       imagen = req.files.imagen;
@@ -130,10 +128,9 @@ router.post('/modificar', async (req, res, next) => {
       tamanio: req.body.tamanio,
       otras_caracteristicas: req.body.otras_caracteristicas,
       perdido: req.body.perdido,
+      edad: req.body.edad,
       img_id
     }
-
-    console.log(obj, req.body.id_mascota);
 
     await mascotasModel.modifyMascotaById(obj, req.body.id_mascota);
     res.redirect('/admin/mascotas');
