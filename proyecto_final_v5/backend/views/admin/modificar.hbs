@@ -103,7 +103,7 @@
                 <div class="col-md-4">
                   <label>
                     Sigue Perdido?
-                    <input type="checkbox" name="perdido" value="1">
+                    <input type="checkbox" name="perdido" value="1" {{#ifCond mascota.perdido 1}}checked{{else}}{{#ifCond mascota.perdido 'Si'}}checked{{else}}{{/ifCond}}{{/ifCond}}>
                   </label>
                 </div>
               </div>
@@ -122,8 +122,8 @@
                   <label for="especie" class="form-label">Especie</label>
                   <select class="form-select" aria-label="Default select example" name="id_especie">
                     <option selected>Seleccione tipo de Especie</option>
-                    <option value="1">Perro</option>
-                    <option value="2">Gato</option>
+                    <option {{#ifCond mascota.id_especie 1}}selected{{else}}{{/ifCond}}  value="1">Perro</option>
+                    <option {{#ifCond mascota.id_especie 2}}selected{{else}}{{/ifCond}}  value="2">Gato</option>
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -155,8 +155,8 @@
                 <div class="col-md-12">
                   <label for="fecha" class="form-label">Fecha Perdida:</label>
                   <div class="input-group">
-                    <input id="perdida_perdida" name="perdida_perdida" class="form-control" type="date" />
-                    <span id="fechaPerdidaSelected"></span>
+                    <input id="perdida_perdida" name="perdida_perdida" class="form-control" type="date"/>
+                    <span id="fechaPerdidaSelected">{{formatDate mascota.fecha_perdido}}</span>
                   </div>
                 </div>
               </div>

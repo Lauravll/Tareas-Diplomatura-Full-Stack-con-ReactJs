@@ -7,6 +7,7 @@ async function getMascotasWithDetails() {
       SELECT
         m.id_mascota,
         m.nombre_mascota,
+        e.id_especie,
         e.nombre AS especie,
         m.raza,
         m.ojos,
@@ -131,6 +132,7 @@ async function getMascotadByIdWithDetails(id) {
       SELECT
         m.id_mascota,
         m.nombre_mascota,
+        e.id_especie,
         e.nombre AS especie,
         m.raza,
         m.ojos,
@@ -177,6 +179,9 @@ async function getMascotadByIdWithDetails(id) {
 
 async function modifyMascotaById(obj, id) {
   try {
+    if (obj.perdido == undefined || isNaN(obj.perdido)) {
+      obj.perdido = 0;
+    }
     var query = "update mascotas set ? where id_mascota = ? ";
     var rows = await pool.query(query, [obj, id]);
     return rows;

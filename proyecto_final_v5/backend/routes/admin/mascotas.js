@@ -119,6 +119,8 @@ router.post('/modificar', async (req, res, next) => {
       await (destroy(req.body.img_original));
     }
 
+    console.log('perdido' + req.body.perdido);
+
     var mascota = {
       nombre_mascota: req.body.nombre_mascota,
       raza: req.body.raza,
@@ -127,8 +129,9 @@ router.post('/modificar', async (req, res, next) => {
       pelaje_tipo: req.body.pelaje_tipo,
       tamanio: req.body.tamanio,
       otras_caracteristicas: req.body.otras_caracteristicas,
-      perdido: req.body.perdido,
+      perdido: parseInt(req.body.perdido),
       edad: req.body.edad,
+      otras_caracteristicas: req.body.otras_caracteristicas,
       img_id
     }
 

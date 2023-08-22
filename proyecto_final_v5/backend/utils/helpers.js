@@ -1,5 +1,8 @@
-function format_date(date) {
-  return "formatting date!" + date;
+function formatDate(date) {
+  if (!date) {
+    return ""; 
+  }
+  return formatDateToString(date);
 }
 
 function ifCond(v1, v2, options) {
@@ -9,4 +12,14 @@ function ifCond(v1, v2, options) {
   return options.inverse(this);
 }
 
-module.exports = { format_date, ifCond };
+function formatDateToString(date) {
+  if (!date) {
+    return ""; 
+  }
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
+module.exports = { formatDate, ifCond };
