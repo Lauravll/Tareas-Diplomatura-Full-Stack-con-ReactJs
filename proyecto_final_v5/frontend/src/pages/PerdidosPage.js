@@ -59,6 +59,7 @@ const PerdidosPage = (props) => {
                   apellido_contacto={item.apellido_contacto}
                   telefono={item.telefono}
                   email={item.email}
+                  fecha_registrado={item.fecha_registrado}
                   imagen={item.imagen} body={item.cuerpo} />)
             )}
           </div>

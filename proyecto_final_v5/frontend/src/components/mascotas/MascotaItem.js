@@ -6,14 +6,15 @@ function formatDate(date) {
 }
 
 const MascotaItem = (props) => {
-  const { nombre_mascota_item, especie_item, raza_item, ojos, pelaje_tipo, pelaje_color, tamanio, fecha_perdido, provincia, localidad, nombre_contacto, apellido_contacto, telefono, email, imagen, body } = props;
+  const { nombre_mascota_item, especie_item, raza_item, ojos, pelaje_tipo, pelaje_color, tamanio, fecha_perdido, provincia, localidad, nombre_contacto, apellido_contacto, telefono, email, fecha_registrado, imagen, body } = props;
 
   const fechaFormateada = formatDate(fecha_perdido);
+  const fechaRegistradaFormateada = formatDate(fecha_registrado);
 
   return (
         <div className="col mascotas">
           <div className="card shadow-sm bg-dark">
-            <img src={imagen} alt={imagen} className="d-block w-100"/>
+        <img src={imagen} alt={imagen} className="d-block w-100" style={{ height: '260px', objectFit: 'cover' }} />
 
             <div className="card-body">
               <p className="card-text text-white">
@@ -25,10 +26,7 @@ const MascotaItem = (props) => {
             Si tienes datos contactarse con {nombre_contacto} {apellido_contacto}, teléfono: {telefono}, email: {email}
               </p>
               <div className="d-flex justify-content-between align-items-center">
-                <div>
-                  <a href="/encontrado-perdido" className="btn btn-sm btn-outline-secondary">Ver</a>
-                </div>
-                <small className="text-muted">2 horas</small>
+            <small className="text">{fechaRegistradaFormateada}</small>
               </div>
             </div>
           </div>
