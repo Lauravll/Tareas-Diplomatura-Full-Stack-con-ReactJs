@@ -12,10 +12,15 @@
         <div class="col-md-12 mb-3">
           <label for="imagen" class="form-label">Selecciona una imagen:</label>
           <input type="file" class="form-control-file" id="imagen" name="imagen" />
+        
+          {{#if mascota.img_id}}
           <p>
-            <label class="form-label"><input type="checkbox" name="img_delete" id="img_delete" value="1">¿Desea eliminar la imagen actual?</label>
-            <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+            <label class="form-label">
+              <input type="checkbox" name="img_delete" id="img_delete" value="1">¿Desea eliminar la imagen actual?
+            </label>
+            <input type="hidden" name="img_original" value="{{mascota.img_id}}">
           </p>
+          {{/if}}
         </div>
 
         <div class="row">
@@ -53,7 +58,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="provincia" class="form-label">Provincia</label>
                   <select class="form-select" aria-label="Default select example" name="id_provincia">
                     <option>Seleccione una Provincia</option>
@@ -62,13 +67,15 @@
                     <option {{#ifCond mascota.id_provincia 3}}selected{{else}}{{/ifCond}} value="3">Chaco</option>
                   </select>
                 </div>
-                <div class="col-md-6">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
                   <label for="localidad" class="form-label">Localidad</label>
                   <select class="form-select" aria-label="Default select example" name="id_localidad">
-                    <option selected>Seleccione una Localidad</option>
-                    <option value="1">La Plata</option>
-                    <option value="2">Mar del Plata</option>
-                    <option value="3">Bahía Blanca</option>
+                    <option>Seleccione una Localidad</option>
+                    <option {{#ifCond mascota.id_localidad 1}}selected{{else}}{{/ifCond}} value="1">La Plata</option>
+                    <option {{#ifCond mascota.id_localidad 2}}selected{{else}}{{/ifCond}} value="2">Mar del Plata</option>
+                    <option {{#ifCond mascota.id_localidad 3}}selected{{else}}{{/ifCond}} value="3">Bahía Blanca</option>
                   </select>
                 </div>
               </div>
@@ -142,9 +149,18 @@
                   <input type="text" class="form-control" id="edad" placeholder="Edad" name="edad" value="{{mascota.edad}}"/>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="fecha" class="form-label">Fecha Perdida:</label>
+                  <div class="input-group">
+                    <input id="perdida_perdida" name="perdida_perdida" class="form-control" type="date" />
+                    <span id="fechaPerdidaSelected"></span>
+                  </div>
+                </div>
+              </div>
               <div class="col-md-12 mb-3">
                 <label for="otras_caracteristicas">Otras Características</label>
-                <textarea class="form-control" id="caracteristicas" rows="3" name="otras_caracteristicas" ></textarea>
+                <textarea class="form-control" id="caracteristicas" rows="2" name="otras_caracteristicas" value="{{mascota.otras_caracteristicas}}"></textarea>
               </div>
             </fieldset>
           </div>

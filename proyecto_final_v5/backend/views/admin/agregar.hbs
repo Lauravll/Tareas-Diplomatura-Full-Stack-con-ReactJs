@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="provincia" class="form-label">Provincia</label>
                   <select class="form-select" aria-label="Default select example" name="id_provincia">
                     <option selected>Seleccione una Provincia</option>
@@ -55,7 +55,9 @@
                     <option value="3">Chaco</option>
                   </select>
                 </div>
-                <div class="col-md-6">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
                   <label for="localidad" class="form-label">Localidad</label>
                   <select class="form-select" aria-label="Default select example" name="id_localidad">
                     <option selected>Seleccione una Localidad</option>
@@ -135,9 +137,18 @@
                   <input type="text" class="form-control" id="edad" placeholder="Edad" name="edad" />
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="fecha" class="form-label">Fecha Perdida:</label>
+                  <div class="input-group">
+                    <input id="perdida_perdida" name="perdida_perdida" class="form-control" type="date" />
+                    <span id="fechaPerdidaSelected"></span>
+                  </div>
+                </div>
+              </div>
               <div class="col-md-12 mb-3">
                 <label for="otras_caracteristicas">Otras Características</label>
-                <textarea class="form-control" id="caracteristicas" rows="3" name="otras_caracteristicas"></textarea>
+                <textarea class="form-control" id="caracteristicas" rows="2" name="otras_caracteristicas"></textarea>
               </div>
             </fieldset>
           </div>
