@@ -65,14 +65,14 @@ async function insertMascota(obj) {
     }
     //Finalizo insertar datos de contacto
 
+    //Tomo fecha actual 
+    const currentDate = new Date(); // Obtiene la fecha y hora actual
+    const formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' '); 
+
     //Inserto datos de la mascota
     if (obj.perdido == undefined) {
       obj.perdido = 0;
     }
-
-    //Tomo fecha actual 
-    const currentDate = new Date(); // Obtiene la fecha y hora actual
-    const formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' '); // Formatea la fecha como 'YYYY-MM-DD HH:MM:SS'
 
     const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto, img_id, edad, fecha_registrado) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     console.log('datos finales'+ obj)
