@@ -119,7 +119,7 @@ router.post('/modificar', async (req, res, next) => {
       await (destroy(req.body.img_original));
     }
 
-    var obj = {
+    var mascota = {
       nombre_mascota: req.body.nombre_mascota,
       raza: req.body.raza,
       ojos: req.body.ojos,
@@ -132,7 +132,27 @@ router.post('/modificar', async (req, res, next) => {
       img_id
     }
 
-    await mascotasModel.modifyMascotaById(obj, req.body.id_mascota);
+    var ubicacion = {
+      id_localidad: parseInt(req.body.id_localidad),
+      id_provincia: parseInt(req.body.id_provincia),
+      calle: req.body.calle,
+      numero: req.body.numero
+    }
+
+    var contacto = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      email: req.body.email,
+      telefono: parseInt(req.body.telefono),
+      esDuenio: parseInt(req.body.esDuenio),
+      id_ubicacion: parseInt(req.body.id_ubicacion)
+    }
+
+    await mascotasModel.modifyUbicacionById(ubicacion, req.body.id_ubicacion);
+
+    await mascotasModel.modifyContactoById(contacto, req.body.id_contacto);
+
+    await mascotasModel.modifyMascotaById(mascota, req.body.id_mascota);
     res.redirect('/admin/mascotas');
 
   } catch (error) {

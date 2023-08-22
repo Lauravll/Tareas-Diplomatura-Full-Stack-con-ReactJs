@@ -70,7 +70,7 @@ async function insertMascota(obj) {
     const formattedDate = currentDate.toISOString().slice(0, 19).replace('T', ' '); 
 
     //Inserto datos de la mascota
-    if (obj.perdido == undefined) {
+    if (obj.perdido == undefined || isNaN(obj.perdido)) {
       obj.perdido = 0;
     }
 
@@ -101,7 +101,7 @@ async function insertUbicacionContacto(obj) {
 
 async function insertContacto(obj) {
   try {
-    if (obj.esDuenio == undefined) {
+    if (obj.esDuenio == undefined || isNaN(obj.esDuenio)) {
       obj.esDuenio = 0;
     }
     const query = "insert into contactos (nombre, apellido, email, telefono, esDuenio, id_ubicacion) values (?, ?, ?, ?, ?, ?)";
@@ -178,7 +178,6 @@ async function getMascotadByIdWithDetails(id) {
 async function modifyMascotaById(obj, id) {
   try {
     var query = "update mascotas set ? where id_mascota = ? ";
-    console.log(query);
     var rows = await pool.query(query, [obj, id]);
     return rows;
   } catch (error) {
@@ -186,4 +185,27 @@ async function modifyMascotaById(obj, id) {
   }
 } 
 
-module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById }
+async function modifyContactoById(obj, id) {
+  try {
+    if (obj.esDuenio == undefined || isNaN(obj.esDuenio)) {
+      obj.esDuenio = 0;
+    }
+    var query = "update contactos set ? where id_contacto = ? ";
+    var rows = await pool.query(query, [obj, id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+} 
+
+async function modifyUbicacionById(obj, id) {
+  try {
+    var query = "update ubicaciones set ? where id_ubicacion = ? ";
+    var rows = await pool.query(query, [obj, id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+} 
+
+module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById, modifyContactoById, modifyUbicacionById }

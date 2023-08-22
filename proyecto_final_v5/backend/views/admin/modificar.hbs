@@ -6,6 +6,8 @@
       <form for="nombre" class="formulario row g-3 " action="/admin/mascotas/modificar" method="post" enctype="multipart/form-data">
       
         <input type="hidden" name="id_mascota" value="{{mascota.id_mascota}}">
+        <input type="hidden" name="id_contacto" value="{{mascota.id_contacto}}">
+        <input type="hidden" name="id_ubicacion" value="{{mascota.id_ubicacion}}">
 
         <h2>Registrar animal perdido</h2>
 
@@ -33,7 +35,7 @@
                 <div class="col-md-4">
                   <label>
                     Es el Dueño?
-                    <input type="checkbox" name="esDuenio" value="1">
+                    <input type="checkbox" name="esDuenio" value="{{mascota.esDuenio}}" {{#ifCond mascota.esDuenio 1}}checked{{else}}{{/ifCond}}>
                   </label>
                 </div>
               </div>
