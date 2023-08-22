@@ -10,6 +10,8 @@ require('dotenv').config();
 
 var session = require('express-session');
 
+const helpers = require('./utils/helpers');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,8 +19,11 @@ var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
 var perdidosRouter = require('./routes/admin/mascotas');
 var apiRouter = require('./routes/api');
+const { handlebars } = require('hbs');
 
 var app = express();
+
+handlebars.registerHelper(helpers);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

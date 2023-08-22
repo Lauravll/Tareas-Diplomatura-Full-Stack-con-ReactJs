@@ -57,9 +57,9 @@
                   <label for="provincia" class="form-label">Provincia</label>
                   <select class="form-select" aria-label="Default select example" name="id_provincia">
                     <option>Seleccione una Provincia</option>
-                    <option value="1">Buenos Aires</option>
-                    <option value="2">Catamarca</option>
-                    <option value="3">Chaco</option>
+                    <option {{#ifCond mascota.id_provincia 1}}selected{{else}}{{/ifCond}} value="1">Buenos Aires</option>
+                    <option {{#ifCond mascota.id_provincia 2}}selected{{else}}{{/ifCond}} value="2">Catamarca</option>
+                    <option {{#ifCond mascota.id_provincia 3}}selected{{else}}{{/ifCond}} value="3">Chaco</option>
                   </select>
                 </div>
                 <div class="col-md-6">
