@@ -46,6 +46,19 @@ const PerdidosPage = (props) => {
               mascotas.map(item =>
                 <MascotaItem key={item.id}
                   nombre_mascota_item={item.nombre_mascota}
+                  raza_item={item.raza}
+                  especie_item={item.especie}
+                  ojos={item.ojos}
+                  pelaje_tipo={item.pelaje_tipo}
+                  pelaje_color={item.pelaje_color}
+                  tamanio={item.tamanio}
+                  fecha_perdido={item.fecha_perdido}
+                  provincia={item.provincia}
+                  localidad={item.localidad}
+                  nombre_contacto={item.nombre_contacto}
+                  apellido_contacto={item.apellido_contacto}
+                  telefono={item.telefono}
+                  email={item.email}
                   imagen={item.imagen} body={item.cuerpo} />)
             )}
           </div>
