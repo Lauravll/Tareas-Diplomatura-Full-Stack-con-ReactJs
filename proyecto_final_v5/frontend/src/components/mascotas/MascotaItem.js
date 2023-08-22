@@ -18,12 +18,12 @@ const MascotaItem = (props) => {
 
             <div className="card-body">
               <p className="card-text text-white">
-            {nombre_mascota_item} es un {especie_item} de raza {raza_item}, sus ojos son {ojos} y su pelaje {pelaje_tipo} y {pelaje_color}.
-            <br />
-            Es de tamaño {tamanio}.
-            Se perdió el dia {fechaFormateada} en {provincia} - {localidad}. 
-            <br />
-            Si tienes datos contactarse con {nombre_contacto} {apellido_contacto}, teléfono: {telefono}, email: {email}
+                {nombre_mascota_item} es un {especie_item} de raza {raza_item}. Tiene ojos {ojos} y pelaje {pelaje_tipo} de color {pelaje_color}.
+                <br />
+                Es de tamaño {tamanio}.
+                Se perdió el día {fechaFormateada} en {provincia}, {localidad}.
+                <br />
+                Si tienes información, contacta a {nombre_contacto} {apellido_contacto} al teléfono {telefono} o vía email: {email}.
               </p>
               <div className="d-flex justify-content-between align-items-center">
             <small className="text">{fechaRegistradaFormateada}</small>
