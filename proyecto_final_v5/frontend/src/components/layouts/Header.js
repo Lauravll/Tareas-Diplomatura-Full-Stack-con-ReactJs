@@ -14,6 +14,7 @@ const Header = (props) => {
             <Nav.Link href="/perdidos">Perdidos</Nav.Link>
             <Nav.Link href="/consejos">Consejos</Nav.Link>
             <Nav.Link href="/novedades">Novedades</Nav.Link>
+            <Nav.Link href="/contacto">Contacto</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

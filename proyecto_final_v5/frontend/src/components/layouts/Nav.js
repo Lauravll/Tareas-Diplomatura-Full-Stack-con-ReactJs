@@ -6,6 +6,8 @@ import NovedadesPage from '../../pages/NovedadesPage';
 import { NavLink, BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactoPerdidosPage from '../../pages/ContactoPerdidosPage';
 import EncontradoPerdidoPage from '../../pages/EncontradoPerdidoPage';
+import RegistrarMascotaPerdidaPage from '../../pages/RegistrarMascotaPerdidaPage';
+
 
 const Nav = () => {
   return (
@@ -51,6 +53,7 @@ const Nav = () => {
         <Route path="/novedades" element={<NovedadesPage />} />
         <Route path="/contacto" element={<ContactoPerdidosPage />} />
         <Route path="/encontrado-perdido" element={<EncontradoPerdidoPage />} />
+        <Route path="/registrar-mascota-perdida" element={<RegistrarMascotaPerdidaPage />} />
       </Routes>
     </BrowserRouter>
   );

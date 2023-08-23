@@ -20,8 +20,6 @@ const PerdidosPage = (props) => {
     getMascotasWithDetails();
   }, []);
 
-  console.log(mascotas);
-
   return (
     <main>
       <section className="py-1 text-center container">
@@ -29,7 +27,7 @@ const PerdidosPage = (props) => {
           <div className="col-lg-6 col-md-8 mx-auto">
             <h1 className="fw-normal">Últimos reportados perdidos</h1>
             <p>
-              <a href="/contacto" className="btn my-2 text-white fondoVioleta" style={{ backgroundColor: '#1a0a3e' }} >Contacto por mascota perdida</a>
+              <a href="/registrar-mascota-perdida" className="btn my-2 text-white fondoVioleta" style={{ backgroundColor: '#1a0a3e' }} >Registrar mascota perdida</a>
             </p>
           </div>
         </div>

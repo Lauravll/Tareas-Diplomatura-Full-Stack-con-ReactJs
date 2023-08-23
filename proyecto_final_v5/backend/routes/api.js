@@ -55,4 +55,15 @@ router.post('/contacto', async (req, res) => {
 
 })
 
+router.post('/agregarFromReact', async (req, res) => {
+  try {
+    const nuevaMascota = req.body;
+    await mascotasModel.insertMascotaPart(nuevaMascota);
+    res.status(200).json({ message: 'Mascota agregada exitosamente' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al agregar la mascota' });
+  }
+});
+
 module.exports = router;

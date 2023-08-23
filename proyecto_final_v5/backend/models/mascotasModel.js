@@ -76,7 +76,6 @@ async function insertMascota(obj) {
     }
 
     const query = "insert into mascotas (nombre_mascota, raza, ojos, pelaje_color, pelaje_tipo, tamanio, perdido, id_especie, id_contacto, img_id, edad, fecha_registrado) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    console.log('datos finales'+ obj)
     const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos, obj.pelaje_color, obj.pelaje_tipo, obj.tamanio, parseInt(obj.perdido), parseInt(obj.id_especie), parseInt(obj.id_contacto), obj.img_id, parseInt(obj.edad), formattedDate]);
     //Finalizo insertar datos de mascota
 
@@ -169,8 +168,6 @@ async function getMascotadByIdWithDetails(id) {
       WHERE id_mascota = ?;
     `;
     var rows = await pool.query(query, [id]);
-    console.log(rows)
-
     return rows[0];
   } catch (error) {
     console.log(error);
@@ -235,4 +232,16 @@ async function getProvincias() {
   }
 }
 
-module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById, modifyContactoById, modifyUbicacionById, getLocalidadesByProvincia, getProvincias }
+async function insertMascotaPart(obj) {
+  try {
+    const query = "INSERT INTO mascotas (nombre_mascota, raza, ojos) VALUES (?, ?, ?)";
+    const rows = await pool.query(query, [obj.nombre_mascota, obj.raza, obj.ojos]);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+
+module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById, modifyContactoById, modifyUbicacionById, getLocalidadesByProvincia, getProvincias, insertMascotaPart }
