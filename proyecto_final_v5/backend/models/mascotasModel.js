@@ -213,4 +213,26 @@ async function modifyUbicacionById(obj, id) {
   }
 } 
 
-module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById, modifyContactoById, modifyUbicacionById }
+async function getLocalidadesByProvincia(provinciaId) {
+  try {
+    const query = 'select * from localidades where id_provincia = ?';
+    const rows = await pool.query(query, [provinciaId]);
+    return rows;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+async function getProvincias() {
+  try {
+    const query = 'select * from provincias';
+    const rows = await pool.query(query);
+    return rows;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+module.exports = { getMascotasWithDetails, insertMascota, deleteMascotaById, getMascotaById, getMascotadByIdWithDetails, modifyMascotaById, modifyContactoById, modifyUbicacionById, getLocalidadesByProvincia, getProvincias }

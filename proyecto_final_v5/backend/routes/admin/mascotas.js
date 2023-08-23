@@ -39,9 +39,12 @@ router.get('/', async function (req, res, next) {
 
 router.get('/agregar', async (req, res, next) => {
   try {
+    let provincias = await mascotasModel.getProvincias();
+    console.log(provincias);
     res.render('admin/agregar', {
       layout: '/admin/layout',
-      title: 'Buscador de Mascotas'
+      title: 'Buscador de Mascotas',
+      provincias: provincias
     });
   } catch (error) {
     
@@ -167,5 +170,16 @@ router.post('/modificar', async (req, res, next) => {
     })
   }
 })
+
+router.get('/cargar-localidades/:provinciaId', async (req, res) => {
+  try {
+    const provinciaId = req.params.provinciaId;
+    const localidades = await mascotasModel.getLocalidadesByProvincia(provinciaId);
+    res.json(localidades);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al cargar las localidades.' });
+  }
+});
 
 module.exports = router;
