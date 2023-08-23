@@ -37,8 +37,6 @@ router.post('/contacto', async (req, res) => {
         ${req.body.mensaje}. <br> Su teléfono es ${req.body.telefono}`
   }
 
-  console.log(mail);
-
   const transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
@@ -48,7 +46,6 @@ router.post('/contacto', async (req, res) => {
     }
   });
 
-  console.log(transport);
   await transport.sendMail(mail)
 
   res.status(201).json({
