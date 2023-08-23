@@ -29,7 +29,7 @@ const PerdidosPage = (props) => {
           <div className="col-lg-6 col-md-8 mx-auto">
             <h1 className="fw-normal">Últimos reportados perdidos</h1>
             <p>
-              <a href="/contacto-perdidos" className="btn my-2 text-white fondoVioleta" style={{ backgroundColor: '#1a0a3e' }} >Registrar mascota perdida</a>
+              <a href="/contacto" className="btn my-2 text-white fondoVioleta" style={{ backgroundColor: '#1a0a3e' }} >Contacto por mascota perdida</a>
             </p>
           </div>
         </div>

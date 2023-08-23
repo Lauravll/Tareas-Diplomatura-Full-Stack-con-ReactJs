@@ -35,7 +35,7 @@ const Nav = () => {
       >
       </NavLink>
       <NavLink
-        to="/contacto-perdidos"
+        to="/contacto"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
       </NavLink>
@@ -49,7 +49,7 @@ const Nav = () => {
         <Route path="/perdidos" element={<PerdidosPage />} />
         <Route path="/consejos" element={<ConsejosPage />} />
         <Route path="/novedades" element={<NovedadesPage />} />
-        <Route path="/contacto-perdidos" element={<ContactoPerdidosPage />} />
+        <Route path="/contacto" element={<ContactoPerdidosPage />} />
         <Route path="/encontrado-perdido" element={<EncontradoPerdidoPage />} />
       </Routes>
     </BrowserRouter>

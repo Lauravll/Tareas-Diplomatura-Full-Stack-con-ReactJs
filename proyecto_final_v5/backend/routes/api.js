@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mascotasModel = require('./../models/mascotasModel');
 var cloudinary = require('cloudinary').v2;
+var nodemailer = require('nodemailer');
 
 router.get('/mascotas', async function (req, res, next) {
   let mascotas = await mascotasModel.getMascotasWithDetails();
@@ -26,5 +27,35 @@ router.get('/mascotas', async function (req, res, next) {
   });
   res.json(mascotas);
 });
+
+router.post('/contacto', async (req, res) => {
+  const mail = {
+    to: "laura.vll@hotmail.com",
+    subject: "Contacto web",
+    html: `${req.body.nombre_contacto} se contactó a través de la web y quiere más información
+        a este correo: ${req.body.email} <br> Además, hizo el siguiente comentario:
+        ${req.body.mensaje}. <br> Su teléfono es ${req.body.telefono}`
+  }
+
+  console.log(mail);
+
+  const transport = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
+    }
+  });
+
+  console.log(transport);
+  await transport.sendMail(mail)
+
+  res.status(201).json({
+    error: false,
+    message: "Mensaje enviado"
+  })
+
+})
 
 module.exports = router;
